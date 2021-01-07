@@ -1,7 +1,5 @@
 @layout('base')
-
 @section('content')
-
 <form method="POST">
   {{csrfField()}}
 <h1>please enter a new pet</h1>
@@ -16,19 +14,22 @@
 </div>
 
 <div>
-<label>Pet age:</label>
-<input type='text' name='age'/>
+<label>Pet breed:</label>
+<select name="breed">
+@each(b in breeds)
+<option value='{{b.id}}'>{{b.name}}</option>
+@endeach
+</select>
+
+<label>pet owner</label>
+<select name="owner">
+@each(o in owners)
+<option value="{{o.id}}">{{o.first_name}} {{o.last_name}}</option>
+@endeach
+</select>
+
+<input type="submit"/>
+
 </div>
-
-
-
-
-
-
-
-
 </form>
-
-
-
 @endsection
