@@ -1,0 +1,34 @@
+@layout('base')
+
+@section('content')
+
+<form method="POST">
+  {{csrfField()}}
+<h1>please enter a new pet</h1>
+
+<div>
+<label>Pet name:</label>
+<input type='text' name='name'/>
+</div>
+<div>
+<label>Pet age:</label>
+<input type='text' name='age'/>
+</div>
+
+<div>
+<label>Pet age:</label>
+<input type='text' name='age'/>
+</div>
+
+
+
+
+
+
+
+
+</form>
+
+
+
+@endsection
