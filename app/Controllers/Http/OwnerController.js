@@ -1,10 +1,12 @@
 'use strict'
-  const Owner = use('App/Models/Owner')
+ const Owner = use('App/Models/Owner')
 
 class OwnerController {
-index({view}){
-  let owners = Owner.all();
-  return view.render('ownerss/show')
+async index({view}){
+  let owners = await Owner.all();
+  return view.render('owners/show',{
+    owners:owners.toJSON()
+  })
 }
 }
 
